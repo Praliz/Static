@@ -2,6 +2,9 @@ from textnode import TextNode
 from textnode import TextType
 from extract_markdown_images import extract_markdown_images
 from extract_markdown_images import extract_markdown_links
+
+
+
 def split_nodes_delimiter(old_nodes: list[TextNode], delimiter: str, text_type: TextType) -> list[TextNode]:
     new_list = []
     for node in old_nodes:
@@ -66,4 +69,5 @@ def split_nodes_link(old_nodes: list[TextNode]) -> list[TextNode]:
                 remaining_text = section[1]
             if remaining_text != "":
                 new_list.append(TextNode(remaining_text,TextType.TEXT))
-    return new_list       
+    return new_list
+
